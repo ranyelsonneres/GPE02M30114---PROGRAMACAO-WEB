@@ -16,6 +16,12 @@ app.get('/', (req, res) => {
   //cd projeto-crud/public/index.html
 })
 
+//puxar as rotas criadas em api.js
+const apiRoutes = require('./routes/api');
+//JSON
+app.use(express.json());
+app.use('/api/users', apiRoutes); //caminho para chegar em api.js
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
